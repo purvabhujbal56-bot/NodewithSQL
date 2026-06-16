@@ -19,20 +19,8 @@ let getRandomUser = () =>  {
   };
 }
 
-
-try{
-    connection.query("show tables",(err,result) => {
-            if(err) throw err;
-            console.log(result);
-    });
-} catch(err) {
-    console.log(err);
-}
-
-connection.end();
-
 app.get("/",(req,res) => {
-  let q = `select count(*) fro users`;
+  let q = `select count(*) from users`;
   try{
     connection.query("show tables",(err,result) => {
             if(err) throw err;
